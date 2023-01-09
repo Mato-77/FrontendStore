@@ -2,7 +2,7 @@ FROM node:14-alpine
 
 RUN mkdir /frontstore
 
-COPY -r . /frontstore
+COPY ./ /frontstore/
 
 WORKDIR /frontstore
 
