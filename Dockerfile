@@ -1,10 +1,8 @@
 FROM node:14-alpine
 
-RUN mkdir /frontstore
 
-COPY . /frontstore
+COPY . .
 
-WORKDIR /frontstore
 
 
 CMD npm start
