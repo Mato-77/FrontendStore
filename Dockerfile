@@ -8,4 +8,4 @@ WORKDIR /frontstore
 
 
 
-CMD npm start
+CMD npm run build
