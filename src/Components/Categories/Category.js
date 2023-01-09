@@ -1,0 +1,49 @@
+import {useEffect, useState} from "react";
+import CategoryRepository from "../../repositories/categoryRepository";
+import React from "react";
+
+
+const Category = () => {
+
+    const [categories, setCategories] = useState([]);
+
+
+    useEffect(() => {
+      CategoryRepository.fetchOrderedCategories()
+          .then((data) => setCategories(data.data))
+    }, []);
+
+
+    return (
+        <div className={"container mm-4 mt-5"}>
+            {categories &&
+                <div className={"row"}>
+                    <div className={"table-responsive"}>
+                        <table className={"table table-striped"}>
+                            <thead>
+                            <tr>
+                                <th scope={"col"}>Name</th>
+                                <th scope={"col"}>Total</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {
+                                categories && categories.map(item =>
+                                    <tr key={item.name}>
+                                        <td>{item.name}</td>
+                                        <td>{item.total}</td>
+                                    </tr>)
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+                </div>
+
+
+    )
+}
+
+export default Category
