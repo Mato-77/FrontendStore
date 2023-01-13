@@ -4,8 +4,9 @@ RUN mkdir /frontstore
 
 COPY . /frontstore
 
+WORKDIR /frontstore
+
 RUN npm install
 
-WORKDIR /frontstore
 
 CMD npm start
