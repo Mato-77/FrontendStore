@@ -1,10 +1,10 @@
 FROM node:14-alpine
 
-RUN npm run build
-
 RUN mkdir /frontstore
 
 COPY . /frontstore
+
+RUN npm install
 
 WORKDIR /frontstore
 
