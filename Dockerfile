@@ -1,8 +1,8 @@
 FROM node:14-alpine
 
-RUN mkdir /frontend
+RUN mkdir /frontstore
 
-COPY ./frontstore /frontstore
+COPY . /frontstore
 
 WORKDIR /frontstore
 

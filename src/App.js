@@ -15,6 +15,8 @@ import Manufacturer from "./Components/Manufacturer/Manufacturer";
 
 function App() {
 
+
+
     const [products,setProducts] = useState(null);
 
     useEffect(() => {

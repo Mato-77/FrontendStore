@@ -13,7 +13,6 @@ const Category = () => {
           .then((data) => setCategories(data.data))
     }, []);
 
-
     return (
         <div className={"container mm-4 mt-5"}>
             {categories &&
