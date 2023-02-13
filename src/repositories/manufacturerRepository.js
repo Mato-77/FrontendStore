@@ -6,6 +6,11 @@ const manufacturerRepository = {
     },
     fetchOrderedManufacturers: () => {
         return Instance.get("/manufacturers/ordered")
+    },
+    addManufacturer: (name) => {
+        return Instance.post("/manufacturers/add",{
+            "name":name
+        })
     }
 }
 

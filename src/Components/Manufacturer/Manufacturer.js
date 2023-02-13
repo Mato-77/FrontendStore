@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import ManufacturerRepository from "../../repositories/manufacturerRepository";
 import React from "react";
+import ManufacturerAdd from "./manufacturerAdd";
 
 
 const Manufacturer = () => {
@@ -12,6 +13,12 @@ const Manufacturer = () => {
         ManufacturerRepository.fetchOrderedManufacturers()
             .then((data) => setManufacturers(data.data))
     }, []);
+
+    const addManufacturer = (name) => {
+        ManufacturerRepository.addManufacturer(name)
+            .then((data) => setManufacturers(data.data))
+    }
+
 
 
     return (
@@ -40,6 +47,9 @@ const Manufacturer = () => {
                     </div>
                 </div>
             }
+
+            <ManufacturerAdd addManufacturer={addManufacturer} />
+
         </div>
 
 

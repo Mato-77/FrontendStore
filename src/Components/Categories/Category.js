@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import CategoryRepository from "../../repositories/categoryRepository";
 import React from "react";
+import CategoryAdd from "./categoryAdd";
 
 
 const Category = () => {
@@ -13,6 +14,10 @@ const Category = () => {
           .then((data) => setCategories(data.data))
     }, []);
 
+    const addCategory = (name) => {
+        CategoryRepository.addCategory(name)
+            .then((data) => setCategories(data.data))
+    }
     return (
         <div className={"container mm-4 mt-5"}>
             {categories &&
@@ -39,6 +44,7 @@ const Category = () => {
                     </div>
                 </div>
             }
+            <CategoryAdd addCategory={addCategory} />
                 </div>
 
 

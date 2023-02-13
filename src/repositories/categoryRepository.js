@@ -8,6 +8,11 @@ const categoryRepository = {
     },
     fetchOrderedCategories: () => {
         return Instance.get("/categories/ordered")
+    },
+    addCategory: (name) => {
+        return Instance.post("/categories/add",{
+            "name": name
+        })
     }
 }
 
