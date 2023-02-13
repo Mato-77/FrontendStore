@@ -15,10 +15,12 @@ const Manufacturer = () => {
     }, []);
 
     const addManufacturer = (name) => {
+
         ManufacturerRepository.addManufacturer(name)
-            .then((data) => setManufacturers( {
-                manufacturers: manufacturers.push(data.data)
-            }))
+            .then( ()=>  ManufacturerRepository.fetchOrderedManufacturers()
+            .then((data) => setManufacturers(data.data)))
+
+
     }
 
 
@@ -51,6 +53,7 @@ const Manufacturer = () => {
             }
 
             <ManufacturerAdd addManufacturer={addManufacturer} />
+            <button onClick={() => addManufacturer(1)}>Click me</button>
 
         </div>
 

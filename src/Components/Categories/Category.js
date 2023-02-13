@@ -16,9 +16,9 @@ const Category = () => {
 
     const addCategory = (name) => {
         CategoryRepository.addCategory(name)
-            .then((data) => setCategories( {
-                categories: categories.push(data.data)
-            }))
+            .then(() => CategoryRepository.fetchOrderedCategories()
+                .then((data) => setCategories(data.data)))
+
 
 
     }
