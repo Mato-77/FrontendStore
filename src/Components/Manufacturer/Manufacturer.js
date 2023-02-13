@@ -16,7 +16,9 @@ const Manufacturer = () => {
 
     const addManufacturer = (name) => {
         ManufacturerRepository.addManufacturer(name)
-            .then((data) => setManufacturers(data.data))
+            .then((data) => setManufacturers( {
+                manufacturers: manufacturers.push(data.data)
+            }))
     }
 
 

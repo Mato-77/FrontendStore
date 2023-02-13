@@ -6,4 +6,6 @@ COPY . /frontstore
 
 WORKDIR /frontstore
 
+RUN npm install
+
 CMD npm start
