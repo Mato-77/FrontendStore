@@ -53,7 +53,7 @@ const Manufacturer = () => {
             }
 
             <ManufacturerAdd addManufacturer={addManufacturer} />
-            <button onClick={() => addManufacturer(1)}>Click me</button>
+
 
         </div>
 

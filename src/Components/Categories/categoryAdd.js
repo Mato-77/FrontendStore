@@ -36,7 +36,7 @@ const CategoryAdd = (props) => {
                         />
                     </div>
 
-                    <button id="submit" type="submit" className="btn btn-primary m-3">Add manufacturer</button>
+                    <button id="submit" type="submit" className="btn btn-primary m-3">Add category</button>
                 </form>
             </div>
         </div>
